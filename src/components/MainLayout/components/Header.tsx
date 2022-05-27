@@ -28,6 +28,9 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
+const STORE_TITLE = 'Best store';
+const STORE_TITLE_UPPERCASE = STORE_TITLE.toUpperCase();
+
 export default function Header() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -43,10 +46,10 @@ export default function Header() {
   };
 
   return (
-    <AppBar position="relative">
+    <AppBar position="relative" color='secondary'>
       <Toolbar>
         <Typography variant="h6" className={classes.title}>
-          <Link className={classes.homeLink} to="/">My Store!</Link>
+          <Link className={classes.homeLink} to="/">{STORE_TITLE_UPPERCASE}</Link>
         </Typography>
 
         {auth && (

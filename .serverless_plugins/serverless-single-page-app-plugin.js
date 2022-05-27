@@ -90,7 +90,7 @@ class ServerlessPlugin {
 
     const outputs = result.Stacks[0].Outputs;
     const output = outputs.find(
-      entry => entry.OutputKey === 'WebAppCloudFrontDistributionOutput',
+      entry => entry.OutputKey.includes('WebAppCloudFrontDistributionOutput')
     );
 
     if (output && output.OutputValue) {
